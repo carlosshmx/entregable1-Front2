@@ -38,7 +38,7 @@ function obtenerDatosDelUsuario() {
  datosPersona.nombre= prompt("Ingresa tu nombre");
  datosPersona.edad = 2024 - parseInt(prompt("Ingresa el año en que naciste"));
  datosPersona.ciudad= prompt("Ingresa la ciudad donde vives");
- datosPersona.interesPorJs = confirm("Te interes JavaScript?");
+ datosPersona.interesPorJs = confirm("Te interes JavaScript?")? "Si" : "No";
 }
 
 function renderizarDatosUsuario() {
@@ -53,7 +53,7 @@ function renderizarDatosUsuario() {
   perfilNombre.innerText = datosPersona.nombre;
   perfilEdad.innerText = datosPersona.edad;
   perfilCiudad.innerText = datosPersona.ciudad;
-  perfilInteresJs.innerText = datosPersona.interesPorJs == true ? "Si" : "No";
+  perfilInteresJs.innerText = datosPersona.interesPorJs;
 }
 
 
@@ -89,7 +89,7 @@ function alternarColorTema() {
 const sobreMi = document.querySelector("#sobre-mi");
 
 window.addEventListener("keydown", (event) =>{
-  if(event.key === "f"){
+  if(event.key === "f" || event.key === "F"){
     sobreMi.classList.remove("oculto");
   }
 })
